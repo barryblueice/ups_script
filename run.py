@@ -32,11 +32,10 @@ def ping_process(host):
         time.sleep(1)
         ping_result.append(result)
         
-    if False in ping_result:
-        logger.warning(f'无法Ping到host: {host}')
-        return False
-    
-    logger.success('Ping事件已结束')
+    for i in ping_result:
+        if i is False:
+            logger.warning(f'无法Ping到host: {host}')
+            return False
     
     return True
 
@@ -74,7 +73,7 @@ if __name__ == "__main__":
             logger.warning(f'Ping事件执行失败（失败次数：{num}），当执行失败等于{target_num}次时将自动执行关机事件')
             
         else:
-            num == 0
+            num = 0
         if num == target_num:
             shutdown()
             # break
