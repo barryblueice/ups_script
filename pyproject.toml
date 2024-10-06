@@ -10,13 +10,13 @@ python = "^3.10"
 ping3 = "^4.0.8"
 poetry-dotenv-plugin = "^0.2.0"
 loguru = "^0.7.2"
+package-mode = false
 
 
 [[tool.poetry.source]]
 name = "mirrors"
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 priority = "primary"
-package-mode = false
 
 [build-system]
 requires = ["poetry-core"]
