@@ -37,6 +37,8 @@ def ping_process(host):
             logger.warning(f'无法Ping到host: {host}')
             return False
     
+    logger.success('Ping事件已结束')
+    
     return True
 
 def initial_env():
